@@ -14,22 +14,22 @@ function Footers() {
                 <nav>
                     <div className="grid grid-cols-3 gap-4">
                     <p className="footer-title"></p>
-                    <p className="footer-title text-center">Made By </p>
+                    <p className="footer-title text-center">Made By :</p>
                     <p className="footer-title"></p>
                         <div className="flex flex-col items-center">
-                            <img src="https://i0.wp.com/www.womensrepublic.net/wp-content/uploads/2020/08/rabbit-poly-georgette-hijab-2_2048x.jpg?fit=1034%2C1280&ssl=1" alt="" className="rounded-full w-24 h-24" />
-                            <p className="text-xl font-semibold">UI Designer</p>
-                            <p>Fahmida Haque Lisha</p>
+                            <img src="https://i0.wp.com/www.womensrepublic.net/wp-content/uploads/2020/08/rabbit-poly-georgette-hijab-2_2048x.jpg?fit=1034%2C1280&ssl=1" alt="" className="rounded-full w-20 h-20" />
+                            <p className="text-sm font-semibold mt-2">UI Designer</p>
+                            <p className='text-xs'>Fahmida Haque Lisha</p>
                         </div>
                         <div className="flex flex-col items-center">
-                            <img src="https://i0.wp.com/www.womensrepublic.net/wp-content/uploads/2020/08/rabbit-poly-georgette-hijab-2_2048x.jpg?fit=1034%2C1280&ssl=1" alt="" className="rounded-full w-24 h-24" />
-                            <p className="text-xl font-semibold">Front End Developer</p>
-                            <p>Mahfuja Khatun Trisha</p>
+                            <img src="https://i0.wp.com/www.womensrepublic.net/wp-content/uploads/2020/08/rabbit-poly-georgette-hijab-2_2048x.jpg?fit=1034%2C1280&ssl=1" alt="" className="rounded-full w-20 h-20" />
+                            <p className="text-sm font-semibold mt-2">Front End Developer</p>
+                            <p className='text-xs'>Mahfuja Khatun Trisha</p>
                         </div>
                         <div className="flex flex-col items-center">
-                            <img src={tripty} alt="" className="rounded-full w-24 h-24" />
-                            <p className="text-xl font-semibold">Backend Developer</p>
-                            <p>Mirza Zarin Fatema Tripty</p>
+                            <img src={tripty} alt="" className="rounded-full w-20 h-20" />
+                            <p className="text-sm font-semibold mt-2">Backend Developer</p>
+                            <p className='text-xs'>Mirza Zarin Fatema Tripty</p>
                         </div>
                     </div>
                 </nav>
