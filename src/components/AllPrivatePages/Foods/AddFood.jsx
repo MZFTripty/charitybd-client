@@ -8,6 +8,8 @@ import Swal from "sweetalert2";
 function AddFood() {
     const { user } = useContext(AuthContext)
     const [loading, setLoading] = useState(false)
+    const [category, setCategory]= useState('')
+
     const addfood = (e) => {
         e.preventDefault()
         setLoading(true)
@@ -23,7 +25,7 @@ function AddFood() {
         const date = form.date.value;
         const message = form.message.value;
         const foodForm = {
-            foodName, photo, quantity, location, date, message, name, email, userPhoto,category 
+            foodName, photo, quantity, location, date, message, name, email, userPhoto, category
         }
         axios.post('https://charitybd-server.vercel.app/addfood', foodForm)
             .then(res => {
@@ -57,11 +59,11 @@ function AddFood() {
                 <div className="flex justify-center gap-10 py-6">
                     <div className="flex flex-col gap-3">
                         <p className="font-semibold">Enter Expire Date : </p>
-                        <input type="date" name="date" placeholder="Date" className="input input-bordered w-full max-w-xs" required />
+                        <input type="date" name="date" placeholder="Date" className="input input-bordered w-full max-w-xs" required disabled={category==='Clothes'}/>
                     </div>
                     <div className="flex flex-col gap-3">
                         <p>Select Category</p>
-                        <select name="category" className="select select-bordered w-full ">
+                        <select onChange={(e)=>setCategory(e.target.value)} name="category" className="select select-bordered w-full ">
                             <option>Food</option>
                             <option>Clothes</option>
                             <option>Grocery Materials</option>

@@ -21,7 +21,7 @@ function AvailableFoods() {
     const [error, setError] = useState('')
     const { user } = useContext(AuthContext)
     const [food, setFood] = useState({})
-    const { availableFoods, isLoading, refetch } = useAvailableFoods({ page, category })
+    const { availableFoods, isLoading,  } = useAvailableFoods({ page, category })
     const [search, setSearch] = useState('')
     const { searchResults, isLoading: searchLoading } = useSearch({ search })
     const { count , foodCount, clothCount, groceryCount} = useLoaderData() 
@@ -131,7 +131,7 @@ function AvailableFoods() {
                                                     <button onClick={() => {
                                                         document.getElementById('my_modal_1').showModal();
                                                         setFood(food);
-                                                    }} className="btn text-white btn-wide bg-purple-700"><FaRegPlusSquare className="text-xl" /> Request Food </button> :
+                                                    }} className="btn text-white btn-wide bg-purple-700"><FaRegPlusSquare className="text-xl" /> Request {food.category} </button> :
                                                     <Link to={'/loginpage'} className="text-red-800 font-semibold hover:bg-purple-300 hover:text-black p-4 rounded-xl">For Request You have to login </Link>
                                             }
 
