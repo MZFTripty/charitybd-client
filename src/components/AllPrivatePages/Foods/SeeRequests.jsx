@@ -15,9 +15,14 @@ function SeeRequests({ requests, reqRefetch }) {
     }
 
     const handleConfirm = (food) => {
+        // axios.patch(`https://charitybd-server.vercel.app/items/${food.fid}`, { reqQuantity :food.reqQuantity})
+        //         .then(res=>{
+        //             console.log(res.data)
+        //         })
         axios.post('https://charitybd-server.vercel.app/confirmed', food)
             .then(res => {
                 console.log(res)
+                
                 axios.delete(`https://charitybd-server.vercel.app/requests/${food._id}`)
                     .then(res => {
                         console.log('success', res)

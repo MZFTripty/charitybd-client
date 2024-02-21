@@ -43,8 +43,10 @@ function AvailableFoods() {
     }
 
     const handleRequest = (e) => {
+        
         e.preventDefault()
         const donation = e.target.donation.value
+        const reqQuantity = e.target.reqQuantity.value
         const requestEmail = user.email;
         const requestName = user.displayName;
         const requestPhoto = user.photoURL;
@@ -60,11 +62,18 @@ function AvailableFoods() {
         const fid = food._id;
 
         const foodForm = {
-            foodName, date, email, location, message, name, photo, quantity, userPhoto, fid, requestEmail, requestName, requestPhoto, donation
+            foodName, date, email, location, message, name, photo, quantity, userPhoto, fid, requestEmail, requestName, requestPhoto, donation,reqQuantity
         }
-        console.log(foodForm)
-        if (donation < 20) {
-            setError('You have to donate More than 20 tk ')
+
+        if (parseInt(donation) < 20  ) {
+            setError('You have to donate More than 20 tk' )
+             
+        }
+        else if( parseInt(reqQuantity) < 1 ){
+            setError('take quantity more than zero ')
+        }
+        else if(parseInt(reqQuantity) > parseInt(quantity)){
+            setError('take quantity Less than Quantity ')
         }
         else {
             axios.post('https://charitybd-server.vercel.app/requests', foodForm)
@@ -73,6 +82,7 @@ function AvailableFoods() {
                     setShow(true)
                     setError('')
                 })
+            
         }
     }
 
@@ -230,8 +240,9 @@ function AvailableFoods() {
                         show ? <p className="font-semibold text-center animate-bounce">Thanks for Your Donation ❤️❤️</p> :
                             <div>
                                 <h3 className="font-bold text-lg mb-2">How Much You want to donate</h3>
-                                <form onSubmit={handleRequest} className="flex items-center justify-center gap-3">
+                                <form onSubmit={handleRequest} className="flex flex-col items-center justify-center gap-3">
                                     <input type="number" name="donation" placeholder="eg : more than 20 tk" required className="input input-bordered w-full max-w-xs" />
+                                    <input type="number" name="reqQuantity" placeholder="eg : more than zero" required className="input input-bordered w-full max-w-xs" />
                                     <button className="btn bg-purple-700 text-white">Confirm</button>
                                 </form>
                                 <p className="font-semibold text-red-800 text-center mt-4">
