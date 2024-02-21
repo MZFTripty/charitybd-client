@@ -132,6 +132,7 @@ function AvailableFoods() {
                                         <div className="flex-1">
                                             <h2 className="card-title">{food.foodName}</h2>
                                             <p>Quantity : {food.quantity}</p>
+                                            <p>{food.category === 'Clothes'?'':`Expire Date : ${food.date}`}</p>
                                             <p className="flex items-center gap-2"><IoLocation /> {food.location}</p>
                                             <p className="">{food.message.length > 40 ? food.message.slice(0, 41) + ' ....' : food.message}</p>
                                         </div>
