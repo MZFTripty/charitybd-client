@@ -50,6 +50,7 @@ function Navbar() {
                             </details>
                         </li>
                         <li className=" rounded-xl text-purple-700"><Link to={'/addfood'}>Add Items</Link></li>
+                        <li className=" rounded-xl"><Link to={'/blogs'}>Blogs</Link></li>
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-2xl text-purple-500 font-extrabold"><span className="text-3xl -mr-2 text-purple-800 ">C</span>harity <span className="text-3xl text-purple-800">BD</span></a>
