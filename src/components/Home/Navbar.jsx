@@ -23,6 +23,7 @@ function Navbar() {
         </li>
         
         <li className=" rounded-xl"><Link to={'/addfood'}>Add Items</Link></li>
+        <li className=" rounded-xl"><Link to={'/blogs'}>Blogs</Link></li>
 
     </>
 

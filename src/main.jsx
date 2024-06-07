@@ -23,6 +23,7 @@ import ManageFoods from './components/AllPrivatePages/Foods/ManageFoods';
 import MyFoodRequests from './components/AllPrivatePages/Foods/MyFoodRequests';
 import ConfirmedRequest from './components/AllPrivatePages/Foods/ConfirmedRequest';
 import AddCloth from './components/AllPrivatePages/Cloths/AddCloth';
+import Blogs from './components/Pages/blogs';
 
 const queryClient = new QueryClient()
 
@@ -75,7 +76,11 @@ const router = createBrowserRouter([
       {
         path : '/addcloth',
         element : <PrivateRoute><AddCloth/></PrivateRoute>
-      }
+      },
+      {
+        path : '/blogs',
+        element : <PrivateRoute><Blogs/></PrivateRoute>
+      },
 
     ]
   },
