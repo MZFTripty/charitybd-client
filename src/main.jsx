@@ -23,7 +23,9 @@ import ManageFoods from './components/AllPrivatePages/Foods/ManageFoods';
 import MyFoodRequests from './components/AllPrivatePages/Foods/MyFoodRequests';
 import ConfirmedRequest from './components/AllPrivatePages/Foods/ConfirmedRequest';
 import AddCloth from './components/AllPrivatePages/Cloths/AddCloth';
-import Blogs from './components/Pages/blogs';
+import Blog from './components/Pages/Blog';
+// import Blogs from './components/Pages/blogs';
+
 
 
 const queryClient = new QueryClient()
@@ -80,7 +82,7 @@ const router = createBrowserRouter([
       },
       {
         path : '/blogs',
-        element : <PrivateRoute><Blogs/></PrivateRoute>
+        element : <PrivateRoute><Blog/></PrivateRoute>
       },
 
     ]
