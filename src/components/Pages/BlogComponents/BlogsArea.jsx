@@ -58,8 +58,8 @@ export default function BlogsArea() {
                             <p className="px-12 py-4">{blog.post}</p>
                             <img src={blog.blogPhoto} alt="" className="w-60 mt-5 mx-auto" />
                             <div className="mt-6 flex items-center gap-3">
-                                <button disabled={blog.upwards.filter(upEmail => upEmail === email).length !== 0} onClick={() => upward(blog._id)} className="flex items-center gap-2 btn btn-sm bg-green-800 text-white hover:bg-green-950">{blog.upwards.length} <FaRegArrowAltCircleUp /></button>
-                                <button disabled={blog.downwards.filter(upEmail => upEmail === email).length !== 0} onClick={() => downward(blog._id)} className="flex items-center gap-2 btn btn-sm bg-red-800 text-white hover:bg-red-950">{blog.downwards.length} <FaRegArrowAltCircleUp className="rotate-180" /></button>
+                                <button disabled={blog.upwards.filter(upEmail => upEmail === email).length !== 0} onClick={() => upward(blog._id)} className="flex items-center gap-2 btn btn-sm bg-green-800 text-white lg:hover:bg-green-950">{blog.upwards.length} <FaRegArrowAltCircleUp /></button>
+                                <button disabled={blog.downwards.filter(upEmail => upEmail === email).length !== 0} onClick={() => downward(blog._id)} className="flex items-center gap-2 btn btn-sm bg-red-800 text-white lg:hover:bg-red-950">{blog.downwards.length} <FaRegArrowAltCircleUp className="rotate-180" /></button>
                             </div>
                         </div>
                     </>)
