@@ -53,7 +53,7 @@ export default function ManageBlogs() {
                                 blogByEmail.map(blog => <>
                                     <div className="flex flex-col items-center  border-2 p-5 bg-purple-100 rounded-3xl gap-5 mb-6">
                                         <p>{blog.post}</p>
-                                        <img src={blog.blogPhoto} alt="" />
+                                        <img src={blog.blogPhoto} alt="" className="w-32" />
                                         <button onClick={() => deleteBlog(blog._id)} className="btn bg-red-800 text-white hover:bg-red-950">Delete This Blog</button>
                                     </div>
                                 </>)

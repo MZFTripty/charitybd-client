@@ -51,7 +51,12 @@ export default function BlogsArea() {
 
                                 <div className={`lg:radial-progress 
                                                 ${((blog?.upwards.length / (blog?.upwards.length + blog?.downwards.length)) * 100 ) <=50 ? "text-red-700" : "text-green-700" }
-                                    `} style={{ "--value": (blog?.upwards.length / (blog?.upwards.length + blog?.downwards.length)) * 100 }} role="progressbar">{Math.floor((blog?.upwards.length / (blog?.upwards.length + blog?.downwards.length)) * 100)}%</div>
+                                    `} style={{ "--value": blog.upwards.length === 0 ? "0" : Math.floor((blog?.upwards.length / (blog?.upwards.length + blog?.downwards.length)) * 100) }} role="progressbar">
+                                        
+                                        {blog.upwards.length === 0 ? "0" : Math.floor((blog?.upwards.length / (blog?.upwards.length + blog?.downwards.length)) * 100)}%
+                                        
+                                        
+                                        </div>
 
 
                             </div>
