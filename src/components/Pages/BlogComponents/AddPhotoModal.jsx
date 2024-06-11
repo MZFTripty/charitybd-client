@@ -4,7 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider"
 import useBlogs from "../../Hooks/useBlogs"
 import Swal from "sweetalert2"
 
-export default function AddPhotoModal() {
+export default function AddPhotoModal({role}) {
     const [post, setPost] = useState('')
     const [postedPic, setPostedPic] = useState(null)
     const { user } = useContext(AuthContext)
@@ -27,7 +27,7 @@ export default function AddPhotoModal() {
                 formData
             )
                 .then(response => {
-                    axios.post('https://charitybd-server.vercel.app/post-a-blog', { post, name, email, photo, blogPhoto: response.data.secure_url })
+                    axios.post('https://charitybd-server.vercel.app/post-a-blog', { post, name, email, photo, blogPhoto: response.data.secure_url, role,upwards : [], downwards : [] })
                         .then(res => {
                             console.log(res.data)
                             Swal.fire({

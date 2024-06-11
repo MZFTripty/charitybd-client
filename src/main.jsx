@@ -22,8 +22,9 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ManageFoods from './components/AllPrivatePages/Foods/ManageFoods';
 import MyFoodRequests from './components/AllPrivatePages/Foods/MyFoodRequests';
 import ConfirmedRequest from './components/AllPrivatePages/Foods/ConfirmedRequest';
-import AddCloth from './components/AllPrivatePages/Cloths/AddCloth';
+// import AddCloth from './components/AllPrivatePages/Cloths/AddCloth';
 import Blog from './components/Pages/Blog';
+import ManageBlogs from './components/Pages/BlogComponents/ManageBlogs';
 // import Blogs from './components/Pages/blogs';
 
 
@@ -76,13 +77,17 @@ const router = createBrowserRouter([
         path : '/confirmedrequest',
         element : <PrivateRoute><ConfirmedRequest/></PrivateRoute>
       },
-      {
-        path : '/addcloth',
-        element : <PrivateRoute><AddCloth/></PrivateRoute>
-      },
+      // {
+      //   path : '/addcloth',
+      //   element : <PrivateRoute><AddCloth/></PrivateRoute>
+      // },
       {
         path : '/blogs',
         element : <PrivateRoute><Blog/></PrivateRoute>
+      },
+      {
+        path : '/manage-blogs',
+        element : <PrivateRoute><ManageBlogs/></PrivateRoute>
       },
 
     ]

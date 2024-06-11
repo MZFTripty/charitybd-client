@@ -8,13 +8,14 @@ import { updateProfile } from "firebase/auth";
 import { VscLoading } from "react-icons/vsc";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import axios from "axios";
 
 
 function SignUpPage() {
     const { createUser, loading, setLoading, signInGoogle } = useContext(AuthContext)
     const navigate = useNavigate()
-    const [show,setShow]=useState(false)
-    const [length,setLength]=useState(0)
+    const [show, setShow] = useState(false)
+    const [length, setLength] = useState(0)
     console.log(length)
 
     const handleSignUp = (e) => {
@@ -28,6 +29,10 @@ function SignUpPage() {
         createUser(email, password)
             .then(res => {
                 console.log('success')
+                const userForm = {
+                    email, photo, userName, isUpward: false, isDowanward: false, role : 'user'
+                }
+                axios.post('https://charitybd-server.vercel.app/create-user', userForm).then(res => console.log(res))
                 updateProfile(res.user, {
                     displayName: userName, photoURL: photo
                 })
@@ -56,6 +61,13 @@ function SignUpPage() {
         signInGoogle()
             .then(res => {
                 console.log(res)
+                const userName = res.user.displayName
+                const photo = res.user.photoURL
+                const email = res.user.email
+                const userForm = {
+                    email, photo, userName, isUpward: false, isDowanward: false, role : 'user'
+                }
+                axios.post('https://charitybd-server.vercel.app/create-user', userForm).then(res => console.log(res))
                 navigate('/')
             })
             .catch(error => {
@@ -74,11 +86,11 @@ function SignUpPage() {
                     <input type="text" name='photo' placeholder="Enter Photo URL" className="input input-bordered w-full max-w-xs" />
                     <input type="email" name='email' placeholder="Enter Email" className="input input-bordered w-full max-w-xs" />
                     <div className="relative w-full">
-                        <input type={show?'text':'password'} onChange={(e)=> setLength(e.target.value.length)} name='password' placeholder="Enter Password" className="input input-bordered w-full max-w-xs" />
+                        <input type={show ? 'text' : 'password'} onChange={(e) => setLength(e.target.value.length)} name='password' placeholder="Enter Password" className="input input-bordered w-full max-w-xs" />
                         {
-                            length===0?<p></p>:
-                            show?<p onClick={()=> setShow(false)}><FaEyeSlash className="absolute text-xl top-3 right-2 text-black" /></p>:
-                            <p onClick={()=> setShow(true)}><FaEye className="absolute text-xl top-3 right-2 text-black" /></p>
+                            length === 0 ? <p></p> :
+                                show ? <p onClick={() => setShow(false)}><FaEyeSlash className="absolute text-xl top-3 right-2 text-black" /></p> :
+                                    <p onClick={() => setShow(true)}><FaEye className="absolute text-xl top-3 right-2 text-black" /></p>
                         }
                     </div>
                     {

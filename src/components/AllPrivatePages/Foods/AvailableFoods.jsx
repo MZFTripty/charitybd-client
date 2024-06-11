@@ -217,7 +217,11 @@ function AvailableFoods() {
                                                                 <button onClick={() => {
                                                                     document.getElementById('my_modal_1').showModal();
                                                                     setFood(food);
-                                                                }} className="btn text-white btn-wide bg-purple-700">Request Food <FaRegPlusSquare className="text-xl" /></button> :
+                                                                }} className="btn text-white btn-wide bg-purple-700">  
+                                                                Request {food.category === 'Food' && "Food"}
+                                                                {food.category === 'Clothes' && "Cloth"}
+                                                                {food.category === 'Grocery Materials' && "Grosery Materials"}
+                                                                 <FaRegPlusSquare className="text-xl" /></button> :
                                                                 <Link to={'/loginpage'} className="text-red-800 font-semibold hover:bg-purple-300 hover:text-black p-4 rounded-xl">For Request You have to login </Link>
                                                         }
                                                     </div>

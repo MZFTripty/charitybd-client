@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { AuthContext } from "../Provider/AuthProvider"
 import { VscLoading } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 
 function Profile() {
@@ -32,6 +33,7 @@ function Profile() {
                         <img src={user.photoURL} alt="" className="w-40 h-40 rounded-full" />
                         <p>{user.displayName}</p>
                         <p>{user.email}</p>
+                        <Link to={'/manage-blogs'}>Manage Your Blogs</Link>
                         {
                             loading ? <button className='btn bg-red-800 text-white btn-wide  '><VscLoading className="animate-spin text-3xl" /></button>:<button onClick={handleSignOut} className="btn bg-red-800 btn-wide text-white">Sign Out</button>
                         }

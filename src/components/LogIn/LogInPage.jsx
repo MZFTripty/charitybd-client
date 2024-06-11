@@ -7,6 +7,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { VscLoading } from "react-icons/vsc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import axios from "axios";
 
 
 function LogInPage() {
@@ -20,6 +21,13 @@ function LogInPage() {
         signInGoogle()
             .then(res => {
                 console.log(res.user)
+                const userName = res.user.displayName
+                const photo = res.user.photoURL
+                const email = res.user.email
+                const userForm = {
+                    email, photo, userName, isUpward: false, isDowanward: false, role : 'user'
+                }
+                axios.post('https://charitybd-server.vercel.app/create-user', userForm).then(res => console.log(res))
                 navigate(location?.state ? location?.state : '/')
             })
             .catch(error => {
