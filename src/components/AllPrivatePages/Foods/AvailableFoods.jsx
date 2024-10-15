@@ -65,8 +65,8 @@ function AvailableFoods() {
             foodName, date, email, location, message, name, photo, quantity, userPhoto, fid, requestEmail, requestName, requestPhoto, donation,reqQuantity
         }
 
-        if (parseInt(donation) < 20  ) {
-            setError('You have to donate More than 20 tk' )
+        if (parseInt(donation) < 40  ) {
+            setError('You have to donate More than 40 tk' )
              
         }
         else if( parseInt(reqQuantity) < 1 ){
@@ -246,7 +246,7 @@ function AvailableFoods() {
                             <div>
                                 <h3 className="font-bold text-lg mb-2">How Much You want to donate</h3>
                                 <form onSubmit={handleRequest} className="flex flex-col items-center justify-center gap-3">
-                                    <input type="number" name="donation" placeholder="eg : more than 20 tk" required className="input input-bordered w-full max-w-xs" />
+                                    <input type="number" name="donation" placeholder="eg : more than 40 tk" required className="input input-bordered w-full max-w-xs" />
                                     <input type="number" name="reqQuantity" placeholder="eg : more than zero" required className="input input-bordered w-full max-w-xs" />
                                     <button className="btn bg-purple-700 text-white">Confirm</button>
                                 </form>

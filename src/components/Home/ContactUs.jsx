@@ -15,23 +15,23 @@ function ContactUs() {
                         Email Us
                     </p>
                     <a href="mailto:contact@example.com" className="text-blue-500 hover:underline">zarinfatematripty@gmail.com</a><br />
-                    <a href="mailto:contact@example.com" className="text-blue-500 hover:underline">zarinfatematripty@gmail.com</a><br />
-                    <a href="mailto:contact@example.com" className="text-blue-500 hover:underline">zarinfatematripty@gmail.com</a>
+                    {/* <a href="mailto:contact@example.com" className="text-blue-500 hover:underline">zarinfatematripty@gmail.com</a><br /> */}
+                    <a href="mailto:contact@example.com" className="text-blue-500 hover:underline">tania.ponni.2003@gmail.com</a>
                 </div>
                 <div className="w-full md:w-1/3 text-center">
                     <p className="text-lg text-gray-700 font-semibold">
                         Call Us
                     </p>
                     <a href="tel:+123456789" className="text-blue-500 hover:underline">+8801*******</a><br />
-                    <a href="tel:+123456789" className="text-blue-500 hover:underline">+8801*******</a><br />
+                    {/* <a href="tel:+123456789" className="text-blue-500 hover:underline">+8801*******</a><br /> */}
                     <a href="tel:+123456789" className="text-blue-500 hover:underline">+8801*******</a>
                 </div>
-                <div className="w-full md:w-1/3 text-center mb-16">
+                <div className="w-full md:w-1/3 text-center mb-8">
                     <p className="text-lg text-gray-700 font-semibold">
                         Visit Us
                     </p>
                     <p className="text-gray-600">
-                        Sherpur,Bogura
+                        Mymensingh Engineering College
                     </p>
                 </div>
             </div>

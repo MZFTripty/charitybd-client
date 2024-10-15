@@ -9,10 +9,10 @@ function Navbar() {
     const { user } = useContext(AuthContext)
 
     const navItems = <>
-        <li><Link to={'/'}>Home</Link></li>
+        <li className="text-purple-800"><Link to={'/'}>Home</Link></li>
         <li>
             <div className="dropdown dropdown-bottom hover:dropdown-hover ">
-                <div tabIndex={0} role="button" className="">Items</div>
+                <div tabIndex={0} role="button" className="text-purple-800">Items</div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                     <li className="hover:bg-purple-200 rounded-xl"><Link to={'/availablefoods'}>Available Items</Link></li>
                     <li className="hover:bg-purple-200 rounded-xl"><Link to={'/managefoods'}>Manage My Items</Link></li>
@@ -22,8 +22,8 @@ function Navbar() {
             </div>
         </li>
         
-        <li className=" rounded-xl"><Link to={'/addfood'}>Add Items</Link></li>
-        <li className=" rounded-xl"><Link to={'/blogs'}>Blogs</Link></li>
+        <li className="text-purple-800 rounded-xl"><Link to={'/addfood'}>Add Items</Link></li>
+        <li className="text-purple-800 rounded-xl"><Link to={'/blogs'}>Blogs</Link></li>
 
     </>
 
@@ -50,7 +50,7 @@ function Navbar() {
                             </details>
                         </li>
                         <li className=" rounded-xl text-purple-700"><Link to={'/addfood'}>Add Items</Link></li>
-                        <li className=" rounded-xl"><Link to={'/blogs'}>Blogs</Link></li>
+                        <li className=" rounded-xl text-purple-600"><Link to={'/blogs'}>Blogs</Link></li>
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-2xl text-purple-500 font-extrabold"><span className="text-3xl -mr-2 text-purple-800 ">C</span>harity <span className="text-3xl text-purple-800">BD</span></a>
