@@ -6,7 +6,7 @@ export default function useUser({ email }) {
     const { data: userInfo, isLoading, refetch } = useQuery({
         queryKey: ['userInfo', email],
         queryFn: async () => {
-            const res = await axios.get(`https://charitybd-server.vercel.app/userInfo/${email}`)
+            const res = await axios.get(`http://localhost:5000/userInfo/${email}`)
             return res.data
         }
     })

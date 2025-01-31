@@ -22,7 +22,7 @@ export default function PostArea() {
   console.log(role)
 
   const submitPost = () => {
-    axios.post('https://charitybd-server.vercel.app/post-a-blog', { post, name, email, photo, upwards : [], downwards : [] , role})
+    axios.post('http://localhost:5000/post-a-blog', { post, name, email, photo, upwards : [], downwards : [] , role})
       .then(res => {
         console.log(res.data)
         Swal.fire({

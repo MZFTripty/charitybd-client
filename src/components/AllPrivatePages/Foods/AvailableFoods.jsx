@@ -76,7 +76,7 @@ function AvailableFoods() {
             setError('take quantity Less than Quantity ')
         }
         else {
-            axios.post('https://charitybd-server.vercel.app/requests', foodForm)
+            axios.post('http://localhost:5000/requests', foodForm)
                 .then(res => {
                     console.log(res.data)
                     setShow(true)

@@ -27,7 +27,7 @@ export default function AddPhotoModal({role}) {
                 formData
             )
                 .then(response => {
-                    axios.post('https://charitybd-server.vercel.app/post-a-blog', { post, name, email, photo, blogPhoto: response.data.secure_url, role,upwards : [], downwards : [] })
+                    axios.post('http://localhost:5000/post-a-blog', { post, name, email, photo, blogPhoto: response.data.secure_url, role,upwards : [], downwards : [] })
                         .then(res => {
                             console.log(res.data)
                             Swal.fire({

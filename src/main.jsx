@@ -25,6 +25,8 @@ import ConfirmedRequest from './components/AllPrivatePages/Foods/ConfirmedReques
 // import AddCloth from './components/AllPrivatePages/Cloths/AddCloth';
 import Blog from './components/Pages/Blog';
 import ManageBlogs from './components/Pages/BlogComponents/ManageBlogs';
+import Users from './components/AllPrivatePages/AdminOperation/Users';
+import AdminRoute from './components/PrivateRoute/AdminRoute';
 // import Blogs from './components/Pages/blogs';
 
 
@@ -63,32 +65,37 @@ const router = createBrowserRouter([
       {
         path: '/availablefoods',
         element: <AvailableFoods />,
-        loader: ()=> fetch('https://charitybd-server.vercel.app/foodcount')
+        loader: () => fetch('http://localhost:5000/foodcount')
       },
       {
-        path:'/managefoods',
-        element: <PrivateRoute><ManageFoods/></PrivateRoute>
+        path: '/managefoods',
+        element: <PrivateRoute><ManageFoods /></PrivateRoute>
       },
       {
-        path : '/myfoodrequests',
-        element: <PrivateRoute><MyFoodRequests/></PrivateRoute>
+        path: '/myfoodrequests',
+        element: <PrivateRoute><MyFoodRequests /></PrivateRoute>
       },
       {
-        path : '/confirmedrequest',
-        element : <PrivateRoute><ConfirmedRequest/></PrivateRoute>
+        path: '/confirmedrequest',
+        element: <PrivateRoute><ConfirmedRequest /></PrivateRoute>
       },
       // {
       //   path : '/addcloth',
       //   element : <PrivateRoute><AddCloth/></PrivateRoute>
       // },
       {
-        path : '/blogs',
-        element : <PrivateRoute><Blog/></PrivateRoute>
+        path: '/blogs',
+        element: <PrivateRoute><Blog /></PrivateRoute>
       },
       {
-        path : '/manage-blogs',
-        element : <PrivateRoute><ManageBlogs/></PrivateRoute>
+        path: '/manage-blogs',
+        element: <PrivateRoute><ManageBlogs /></PrivateRoute>
       },
+      {
+        path: '/manage-users',
+        element: <AdminRoute><Users /></AdminRoute>
+      },
+
 
     ]
   },

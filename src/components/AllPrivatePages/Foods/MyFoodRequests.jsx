@@ -23,7 +23,7 @@ function MyFoodRequests() {
             confirmButtonText: "Yes, Cancel it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://charitybd-server.vercel.app/requests/${_id}`)
+                axios.delete(`http://localhost:5000/requests/${_id}`)
                     .then(res => {
                         console.log(res)
                         Swal.fire({

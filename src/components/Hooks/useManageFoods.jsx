@@ -6,7 +6,7 @@ function useManageFoods({email}) {
   const {data : foods = [] , isLoading, refetch} = useQuery({
     queryKey : ['foods', email],
     queryFn : async()=>{
-        const res = await axios.get(`https://charitybd-server.vercel.app/managefoods/${email}`)
+        const res = await axios.get(`http://localhost:5000/managefoods/${email}`)
         return res.data;
     }
   })

@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 function SeeRequests({ requests, reqRefetch }) {
 
     const handleCancel = (id) => {
-        axios.delete(`https://charitybd-server.vercel.app/requests/${id}`)
+        axios.delete(`http://localhost:5000/requests/${id}`)
             .then(res => {
                 console.log('success', res)
                 reqRefetch();
@@ -15,15 +15,15 @@ function SeeRequests({ requests, reqRefetch }) {
     }
 
     const handleConfirm = (food) => {
-        // axios.patch(`https://charitybd-server.vercel.app/items/${food.fid}`, { reqQuantity :food.reqQuantity})
+        // axios.patch(`http://localhost:5000/items/${food.fid}`, { reqQuantity :food.reqQuantity})
         //         .then(res=>{
         //             console.log(res.data)
         //         })
-        axios.post('https://charitybd-server.vercel.app/confirmed', food)
+        axios.post('http://localhost:5000/confirmed', food)
             .then(res => {
                 console.log(res)
                 
-                axios.delete(`https://charitybd-server.vercel.app/requests/${food._id}`)
+                axios.delete(`http://localhost:5000/requests/${food._id}`)
                     .then(res => {
                         console.log('success', res)
                         reqRefetch();

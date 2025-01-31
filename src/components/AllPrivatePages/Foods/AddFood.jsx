@@ -27,7 +27,7 @@ function AddFood() {
         const foodForm = {
             foodName, photo, quantity, location, date, message, name, email, userPhoto, category
         }
-        axios.post('https://charitybd-server.vercel.app/addfood', foodForm)
+        axios.post('http://localhost:5000/addfood', foodForm)
             .then(res => {
                 console.log(res.data)
                 setLoading(false)

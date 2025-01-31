@@ -11,7 +11,7 @@ function UpdateFood({ updateId , refetch}) {
     const { data: food = {} , refetch: refetch2} = useQuery({
         queryKey: ['food', updateId],
         queryFn: async () => {
-            const res = await axios.get(`https://charitybd-server.vercel.app/addfood/${updateId}`)
+            const res = await axios.get(`http://localhost:5000/addfood/${updateId}`)
             return res.data
         }
     })
@@ -28,7 +28,7 @@ function UpdateFood({ updateId , refetch}) {
         const foodForm = {
             foodName, photo, quantity, location, date, message
         }
-        axios.put(`https://charitybd-server.vercel.app/addfood/${updateId}`, foodForm)
+        axios.put(`http://localhost:5000/addfood/${updateId}`, foodForm)
             .then(res => {
                 console.log(res.data)
                 setLoading(false)

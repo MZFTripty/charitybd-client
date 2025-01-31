@@ -27,7 +27,7 @@ function LogInPage() {
                 const userForm = {
                     email, photo, userName, isUpward: false, isDowanward: false, role : 'user'
                 }
-                axios.post('https://charitybd-server.vercel.app/create-user', userForm).then(res => console.log(res))
+                axios.post('http://localhost:5000/create-user', userForm).then(res => console.log(res))
                 navigate(location?.state ? location?.state : '/')
             })
             .catch(error => {

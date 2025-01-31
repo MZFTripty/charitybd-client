@@ -6,7 +6,7 @@ function useAvailableFoods({ page, category }) {
     const { data: availableFoods = [], isLoading, refetch } = useQuery({
         queryKey: ['availableFoods', page, category],
         queryFn: async () => {
-            const res = await axios.get(`https://charitybd-server.vercel.app/items?category=${category}&page=${page}&limit=6`)
+            const res = await axios.get(`http://localhost:5000/items?category=${category}&page=${page}&limit=6`)
             return res.data
         }
     })

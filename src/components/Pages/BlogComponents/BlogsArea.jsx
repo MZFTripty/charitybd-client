@@ -15,14 +15,14 @@ export default function BlogsArea() {
     //updward
 
     const upward = (id) => {
-        axios.patch(`https://charitybd-server.vercel.app/upward/${id}/${email}`)
+        axios.patch(`http://localhost:5000/upward/${id}/${email}`)
             .then(res => {
                 console.log(res.user);
                 refetch();
             })
     }
     const downward = (id) => {
-        axios.patch(`https://charitybd-server.vercel.app/downward/${id}/${email}`)
+        axios.patch(`http://localhost:5000/downward/${id}/${email}`)
             .then(res => {
                 console.log(res.user);
                 refetch();

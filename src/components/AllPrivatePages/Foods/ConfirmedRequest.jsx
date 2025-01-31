@@ -13,7 +13,7 @@ function ConfirmedRequest() {
     const { data: foods = [], isLoading } = useQuery({
         queryKey: ['foods', email],
         queryFn: async () => {
-            const res = await axios.get(`https://charitybd-server.vercel.app/confirmed?email=${email}`)
+            const res = await axios.get(`http://localhost:5000/confirmed?email=${email}`)
             return res.data
         }
     })

@@ -23,7 +23,7 @@ export default function ManageBlogs() {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://charitybd-server.vercel.app/delete-Blog/${_id}`)
+                axios.delete(`http://localhost:5000/delete-Blog/${_id}`)
                     .then(res => {
                         console.log(res)
                         Swal.fire({

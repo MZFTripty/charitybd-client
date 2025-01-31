@@ -7,7 +7,7 @@ function useSearch({ search }) {
     const { data: searchResults = [], isLoading } = useQuery({
         queryKey: ['searchResults', search],
         queryFn: async () => {
-            const res = await axios.get(`https://charitybd-server.vercel.app/search?q=${search}`)
+            const res = await axios.get(`http://localhost:5000/search?q=${search}`)
             return res.data
         }
     })

@@ -20,7 +20,7 @@ function ManageFoods() {
     const{data : requests=[], refetch:reqRefetch }= useQuery({
         queryKey : ['requests', foodId, email],
         queryFn : async ()=>{
-            const res = await axios.get(`https://charitybd-server.vercel.app/requests/${foodId}?email=${email}`)
+            const res = await axios.get(`http://localhost:5000/requests/${foodId}?email=${email}`)
             return res.data
         }
     })
@@ -39,7 +39,7 @@ function ManageFoods() {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://charitybd-server.vercel.app/addfood/${_id}`)
+                axios.delete(`http://localhost:5000/addfood/${_id}`)
                     .then(res => {
                         console.log('success')
                     }).catch(err => console.log(err.message))
