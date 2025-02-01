@@ -25,8 +25,11 @@ import ConfirmedRequest from './components/AllPrivatePages/Foods/ConfirmedReques
 // import AddCloth from './components/AllPrivatePages/Cloths/AddCloth';
 import Blog from './components/Pages/Blog';
 import ManageBlogs from './components/Pages/BlogComponents/ManageBlogs';
-import Users from './components/AllPrivatePages/AdminOperation/Users';
+
 import AdminRoute from './components/PrivateRoute/AdminRoute';
+import Users from './components/AdminDashboard/Users';
+import Dashboard from './components/AdminDashboard/Dashboard';
+import DashboardRoot from './components/AdminDashboard/DashboardRoot';
 // import Blogs from './components/Pages/blogs';
 
 
@@ -91,14 +94,22 @@ const router = createBrowserRouter([
         path: '/manage-blogs',
         element: <PrivateRoute><ManageBlogs /></PrivateRoute>
       },
-      {
-        path: '/manage-users',
-        element: <AdminRoute><Users /></AdminRoute>
-      },
-
-
     ]
   },
+  {
+    path: '/admin',
+    element: <AdminRoute><DashboardRoot /></AdminRoute>,
+    children: [
+      {
+        path: "",
+        element: <AdminRoute><Dashboard /></AdminRoute>
+      },
+      {
+        path: "users",
+        element: <AdminRoute><Users /></AdminRoute>
+      },
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
