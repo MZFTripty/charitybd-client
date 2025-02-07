@@ -30,6 +30,8 @@ import AdminRoute from './components/PrivateRoute/AdminRoute';
 import Users from './components/AdminDashboard/Users';
 import Dashboard from './components/AdminDashboard/Dashboard';
 import DashboardRoot from './components/AdminDashboard/DashboardRoot';
+import SuccessPaymentPage from './components/Pages/SuccessPaymentPage';
+import FailurePage from './components/Pages/FailurePage';
 // import Blogs from './components/Pages/blogs';
 
 
@@ -109,7 +111,15 @@ const router = createBrowserRouter([
         element: <AdminRoute><Users /></AdminRoute>
       },
     ]
-  }
+  },
+  {
+    path: '/success',
+    element: <SuccessPaymentPage />
+  },
+  {
+    path: '/failure',
+    element: <FailurePage />
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
