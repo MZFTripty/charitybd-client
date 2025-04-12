@@ -39,6 +39,9 @@ function MyFoodRequests() {
     }
 
     const handlePay = async (food) => {
+
+        console.log(food._id)
+
         try {
             const res = await axios.post(`http://localhost:5000/init`, {
                 total_amount: Number(food.donation),
@@ -48,6 +51,7 @@ function MyFoodRequests() {
                 cus_name: user.displayName,
                 cus_email: user.email,
                 ship_name: user.displayName,
+                requestId: food._id, 
             })
             console.log(res)
             window.location.href = res.data
@@ -81,22 +85,29 @@ function MyFoodRequests() {
                                         <div className="flex flex-col lg:flex-row items-center gap-8 p-4 ">
                                             <div className="flex flex-col gap-4">
                                                 <img src={food.photo} alt="" className="w-40 h-28 rounded-3xl" />
-                                                <h1 className="text-sm badge bg-orange-600 text-white p-2">Your {food.donation} TK is pending</h1>
+                                                {
+                                                    !food.isPaid && <h1 className="text-sm badge bg-orange-600 text-white p-2">Your {food.donation} TK is pending</h1>
+                                                }
                                             </div>
                                             <div>
                                                 <h1><span className="font-bold">Food Name :</span> {food.foodName}</h1>
-                                                <h1><span className="font-bold">Quantity :</span> {food.quantity}</h1>
+                                                <h1 className="flex items-center gap-2"><span className="font-bold">Quantity :</span> {food.reqQuantity} <span className="text-xs font-semibold">{`(Requested)`}</span></h1>
                                                 <h1><span className="font-bold">Expire Date :</span> {food.date}</h1>
                                                 <h1><span className="font-bold">Location :</span>{food.location}</h1>
                                             </div>
                                         </div>
                                         <div className="flex gap-3">
-                                            <div>
-                                                <button onClick={() => handlePay(food)} className="btn btn-sm bg-orange-500 text-white mb-5 lg:mb-0">Pay {food.donation} Tk </button>
-                                            </div>
-                                            <div>
-                                                <button onClick={() => handleCancel(food._id)} className="btn btn-sm bg-red-700 text-white mb-5 lg:mb-0">Cancel</button>
-                                            </div>
+                                            {
+                                                food.isPaid ? <button className="btn btn-sm text-white bg-green-500">Paid !</button> :
+                                                    <>
+                                                        <div>
+                                                            <button onClick={() => handlePay(food)} className="btn btn-sm bg-orange-500 text-white mb-5 lg:mb-0">Pay {food.donation} Tk </button>
+                                                        </div>
+                                                        <div>
+                                                            <button onClick={() => handleCancel(food._id)} className="btn btn-sm bg-red-700 text-white mb-5 lg:mb-0">Cancel</button>
+                                                        </div>
+                                                    </>
+                                            }
                                         </div>
                                     </div>
                                 </>)
