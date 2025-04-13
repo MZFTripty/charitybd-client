@@ -33,7 +33,7 @@ function ConfirmedRequest() {
                                     <img src={food.photo} alt="" className="w-52 h-40 rounded-xl" />
                                     <div className="space-y-1">
                                         <h1>Item name : {food.foodName}</h1>
-                                        <h1>Quantity : {food.quantity}</h1>
+                                        <h1>Quantity : {food.reqQuantity}</h1>
                                         <h1>Expire Date : {food.date}</h1>
                                         <h1>Location : {food.location}</h1>
                                     </div>
