@@ -55,7 +55,9 @@ function SeeRequests({ requests, reqRefetch }) {
                                             <h1 className="">{food.requestEmail}</h1>
                                         </div>
                                         <div className="flex items-center gap-4">
-                                            <button onClick={() => handleConfirm(food)} className="btn bg-green-700 text-white hover:text-black">Accept</button>
+                                            {
+                                                food.isPaid && <button onClick={() => handleConfirm(food)} className="btn bg-green-700 text-white hover:text-black">Accept</button>
+                                            }
                                             <button onClick={() => handleCancel(food._id)} className="btn bg-red-700 text-white hover:text-black">Cancel</button>
                                         </div>
                                     </div>
