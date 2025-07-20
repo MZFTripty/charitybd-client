@@ -40,7 +40,7 @@ function ManageFoods() {
         }).then((result) => {
             if (result.isConfirmed) {
                 axios.delete(`http://localhost:5000/addfood/${_id}`)
-                    .then(res => {
+                    .then(() => {
                         console.log('success')
                     }).catch(err => console.log(err.message))
                 Swal.fire({
