@@ -1,5 +1,5 @@
 import axios from "axios";
-import Swal from "sweetalert2";
+
 
 
 
@@ -53,6 +53,7 @@ function SeeRequests({ requests, reqRefetch }) {
                                         <div>
                                             <h1 className="text-2xl font-semibold">{food.requestName} ({food.donation} tk)</h1>
                                             <h1 className="">{food.requestEmail}</h1>
+                                            <h1 className={`${food.isPaid ? "text-green-500" : "text-red-500"}`}>{food.isPaid ? "Paid" : "This user isn't Paid yet"}</h1>
                                         </div>
                                         <div className="flex items-center gap-4">
                                             {
