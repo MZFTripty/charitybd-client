@@ -242,7 +242,7 @@ function AvailableFoods() {
                         <button onClick={() => setShow(false)} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                     </form>
                     {
-                        show ? <p className="font-semibold text-center animate-bounce">Thanks for Your Donation ❤️❤️</p> :
+                        show ? <p className="font-semibold text-center animate-bounce">Thanks for Your Donation ❤️❤️ <br />Please pay the bill</p> :
                             <div>
                                 <h3 className="font-bold text-lg mb-2">How Much You want to donate</h3>
                                 <form onSubmit={handleRequest} className="flex flex-col items-center justify-center gap-3">
